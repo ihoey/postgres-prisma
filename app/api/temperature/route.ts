@@ -31,3 +31,9 @@ export async function POST(req: Request, res: Response) {
     return NextResponse.json({ message: "email is not found" }, { status: 400 });
   }
 }
+
+export async function GET(req: Request, res: Response) {
+  const temperatures = await prisma.temperature.findMany();
+
+  return NextResponse.json(temperatures);
+}
