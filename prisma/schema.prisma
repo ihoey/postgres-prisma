@@ -20,12 +20,23 @@ model users {
   image       String
   createdAt   DateTime      @default(now())
   temperature temperature[]
+  store       stores[]
 }
 
 model temperature {
   id          Int      @id @default(autoincrement())
-  temperature Int
-  user        users    @relation(references: [id], fields: [usersId])
+  temperature Float
+  user        users    @relation(references: [id], fields: [userId])
   createdAt   DateTime @default(now())
-  usersId     Int
+  userId      Int
+  isDelete    Boolean  @default(false)
+}
+
+model stores {
+  id        Int      @id @default(autoincrement())
+  text      String
+  user      users    @relation(references: [id], fields: [userId])
+  createdAt DateTime @default(now())
+  userId    Int
+  isDelete  Boolean  @default(false)
 }
