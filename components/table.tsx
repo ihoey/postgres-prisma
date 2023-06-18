@@ -53,6 +53,7 @@ export default async function Table() {
               /> */}
                 <div className='space-y-1'>
                   <p className='font-medium leading-none'>{store.text}</p>
+                  {/* @ts-ignore */}
                   <p className='text-sm text-gray-500'>{store.user.name}</p>
                 </div>
               </div>
@@ -84,6 +85,7 @@ export default async function Table() {
               /> */}
                 <div className='space-y-1'>
                   <p className='font-medium leading-none'>{temperature.temperature}℃</p>
+                  {/* @ts-ignore */}
                   <p className='text-sm text-gray-500'>{temperature.user.name}</p>
                 </div>
               </div>
