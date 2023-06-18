@@ -15,6 +15,7 @@ export default async function Table() {
         id: temperature.userId,
       },
     });
+    // @ts-ignore
     temperature.user = user;
   }
   for (const store of stores) {
@@ -23,6 +24,7 @@ export default async function Table() {
         id: store.userId,
       },
     });
+    // @ts-ignore
     store.user = user;
   }
 
